@@ -5,3 +5,4 @@ urlpatterns = [
     path('<slug:slug>/', views.AppShow, name='app_show'),
     path('contact', views.ContactView.as_view(), name='contact'),
 ]
+# ssss
