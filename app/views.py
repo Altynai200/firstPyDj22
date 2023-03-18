@@ -1,8 +1,10 @@
-from django.shortcuts import render
+from django.contrib import messages
+from django.shortcuts import render, redirect
 from django.views import View
-from django.views.generic import ListView
+from django.views.generic import ListView, FormView
 
 from . import models
+from .forms import *
 
 
 # Create your views here.
@@ -37,3 +39,12 @@ def AppShow(request, slug):
 #     model = models.App
 #     slug_field = "url"
 #     template_name = "app/show.html"
+
+class ContactView(FormView):
+    success_url = 'app_index'
+    template_name = 'app/contact.html'
+    form_class = ContactForm
+
+    def form_valid(self, form):
+        messages.add_message(self.request, messages.SUCCESS, 'success!')
+        return redirect('app_index')
