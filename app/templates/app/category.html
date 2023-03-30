@@ -1,16 +1,9 @@
 {% extends 'app/layouts/layout.html' %}
 {% block root %}
-    <center><h1>  <div >
-                {% for page in paginator.page_range %}
-                    <a style="margin-left: 30px; color: #ffffff" href="?page={{ page }};">{{ page }}</a>
-                {% endfor %}
-                </div></h1></center>
-
     <div class="container">
         <div>
-            {% if object_list %}
-
-                {% for app in object_list %}
+            {% if object %}
+                {% for app in object.app_set.all %}
                     <div style="padding-top: 30px;">
                         <a href="{{ app.get_absolute_url }}" style="text-decoration: none;">
                             <center>

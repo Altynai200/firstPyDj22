@@ -75,7 +75,6 @@ WSGI_APPLICATION = 'firstPyDj23.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# dfghgfdsdfgh
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
